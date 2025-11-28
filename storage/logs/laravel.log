@@ -1,0 +1,24 @@
+[2025-11-27 15:40:03] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-27 15:40:17] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-27 15:40:21] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-27 15:40:23] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-27 15:40:27] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-27 15:40:29] local.ERROR: Call to a member function send() on null {"exception":"[object] (Error(code: 0): Call to a member function send() on null at /home/vol9_5/infinityfree.com/if0_40513224/htdocs/index.php:21)
+[stacktrace]
+#0 {main}
+"} 

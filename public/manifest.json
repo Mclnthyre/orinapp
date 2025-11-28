@@ -1,0 +1,23 @@
+{
+  "name": "Orin - Plataforma de Umbanda e Candomblé",
+  "short_name": "Orin",
+  "description": "App PWA com artigos, cantigas, vídeos e serviços espirituais.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+
+  "icons": [
+    {
+      "src": "/icons/orin-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/orin-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
