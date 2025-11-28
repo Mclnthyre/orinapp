@@ -3,7 +3,8 @@ FROM php:8.2-cli as build
 
 WORKDIR /app
 
-COPY composer.json composer.lock ./
+COPY composer.json ./
+COPY composer.lock ./
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar install --no-dev --optimize-autoloader --prefer-dist --no-interaction
 
