@@ -1,20 +1,31 @@
-# --- Etapa 1: Build ---
-FROM php:8.2-cli as build
+# Dockerfile simples para Laravel no Render (usa php built-in server)
+FROM php:8.2-cli
 
-WORKDIR /app
+# Instala dependências do sistema
+RUN apt-get update && apt-get install -y \
+    git \
+    libpng-dev libonig-dev libxml2-dev zip unzip curl wget \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-COPY composer.json ./
-COPY composer.lock ./
-RUN curl -sS https://getcomposer.org/installer | php
-RUN php composer.phar install --no-dev --optimize-autoloader --prefer-dist --no-interaction
-
-COPY . .
-
-# --- Etapa 2: Runtime ---
-FROM php:8.2-apache
+# Instala composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /var/www/html
 
-COPY --from=build /app ./
+# Copia arquivos do Composer antes (cache)
+COPY composer.json composer.lock ./
 
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# Instala dependências sem dev
+RUN composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction
+
+# Copia restante do projeto
+COPY . .
+
+# Permissões
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 storage bootstrap/cache
+
+EXPOSE 10000
+
+# Start
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-10000} -t public"]
